@@ -1,0 +1,2 @@
+// Contact resolvers
+delete contactResolver;
