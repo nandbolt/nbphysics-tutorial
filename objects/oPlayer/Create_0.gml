@@ -14,3 +14,7 @@ nbpSetShape(self.id, NBPShape.CIRCLE);
 
 // Friction
 damping = 0.1;
+
+// Force generators
+fgBungee = new BungeeForceGen(self.id, 1, 500);
+fgGravity = new GravitationalForceGen(self.id, 100000);
