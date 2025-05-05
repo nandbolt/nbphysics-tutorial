@@ -1,6 +1,6 @@
 /// @desc Link Ball
-with (oBall)
+with (oNBP_RigidBody)
 {
-	nbpAddForceGen(self.id, other.fgBungee);
-	nbpAddForceGen(self.id, other.fgGravity);
+	nbpAddContactGen(self.id, other.cgInst);
+	nbpAddContactGen(self.id, other.cgFloor);
 }

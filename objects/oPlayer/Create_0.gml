@@ -10,11 +10,17 @@ nbpSetAwake(self.id, true);
 canSleep = false;
 
 // Set shape
-nbpSetShape(self.id, NBPShape.CIRCLE);
+nbpSetShape(self.id, NBPShape.RECT_ROTATED);
+
+// Set size
+image_xscale = 30;
+image_yscale = 15;
 
 // Friction
 damping = 0.1;
 
-// Force generators
-fgBungee = new BungeeForceGen(self.id, 1, 500);
-fgGravity = new GravitationalForceGen(self.id, 100000);
+// Contact generator
+cgInst = new InstContactGen();
+cgFloor = new FloorContactGen(room_height - 16, 0);
+
+grav.y = 10;

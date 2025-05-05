@@ -1,5 +1,7 @@
 // Inherit the parent event
 event_inherited();
 
-// Bungee cord
-fgBungee.draw(oBall);
+// Player dot
+draw_circle(x, y, 10, false);
+
+cgFloor.draw();
