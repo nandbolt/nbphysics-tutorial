@@ -10,7 +10,7 @@ nbpSetAwake(self.id, true);
 canSleep = false;
 
 // Set shape
-nbpSetShape(self.id, NBPShape.RECT_ROTATED);
+nbpSetShape(self.id, NBPShape.RECT);
 
 // Set size
 image_xscale = 30;
@@ -19,8 +19,30 @@ image_yscale = 15;
 // Friction
 damping = 0.1;
 
-// Contact generator
-cgInst = new InstContactGen();
-cgFloor = new FloorContactGen(room_height - 16, 0);
+// Generators
+tgInst = new InstTriggerGen();
+fgBuoyancy = new BuoyancyForceGen(0, 0.01);
+
+///	@func	onTriggerEnter(trigger);
+///	@param	{Id.Instance}	trigger	The trigger.
+///	@desc	Called once when the body enters the trigger.
+onTriggerEnter = function(_trigger)
+{
+	if (_trigger.object_index == oWater)
+	{
+		nbpAddForceGen(self.id, fgBuoyancy);
+	}
+}
+
+///	@func	onTriggerExit(trigger);
+///	@param	{Id.Instance}	trigger	The trigger.
+///	@desc	Called once when the body exits the trigger.
+onTriggerExit = function(_trigger)
+{
+	if (_trigger.object_index == oWater)
+	{
+		nbpRemoveForceGen(self.id, fgBuoyancy);
+	}
+}
 
 grav.y = 10;

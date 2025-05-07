@@ -5,5 +5,5 @@ event_inherited();
 nbpSetAwake(self.id, true);
 
 // Shape
-nbpSetShape(self.id, NBPShape.CIRCLE);
+nbpSetShape(self.id, NBPShape.RECT);
 damping = 0.1;

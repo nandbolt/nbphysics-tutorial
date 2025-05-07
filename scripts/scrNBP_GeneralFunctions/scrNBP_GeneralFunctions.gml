@@ -654,6 +654,12 @@ function nbpRunPhysics(_pw, _dt)
 		nbpInitTrigger(self.id);
 	}
 	
+	// Update triggers
+	with (_pw.rbObject)
+	{
+		nbpUpdateTriggerGens(self.id, _pw, _dt);
+	}
+	
 	// Apply force generators
 	with (_pw.rbObject)
 	{
@@ -664,12 +670,6 @@ function nbpRunPhysics(_pw, _dt)
 	with (_pw.rbObject)
 	{
 		nbpIntegrate(self.id, _dt);
-	}
-	
-	// Update triggers
-	with (_pw.rbObject)
-	{
-		nbpUpdateTriggerGens(self.id, _pw, _dt);
 	}
 		
 	// Generate contacts

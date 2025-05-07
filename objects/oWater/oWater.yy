@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oBall",
+  "name": "oWater",
   "spriteId": {
     "name": "sNBP_RectFillTransparent",
     "path": "sprites/sNBP_RectFillTransparent/sNBP_RectFillTransparent.yy",

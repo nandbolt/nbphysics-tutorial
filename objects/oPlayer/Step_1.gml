@@ -6,4 +6,3 @@ moveInput.scale(moveStrength);
 
 // Add force
 nbpAddForceVector(self.id, moveInput);
-nbpSetAngle(self.id, image_angle + 1);
